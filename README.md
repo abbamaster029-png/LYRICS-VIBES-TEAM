@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>LYRICS VIBES TEAM | Official Member Profile</title>
+<title>LYRICS VIBES TEAM | Member Profile</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,9 +13,9 @@
 
 <style>
 
-/* =====================================================
+/* ==============================
    RESET
-===================================================== */
+============================== */
 
 *{
     margin:0;
@@ -32,39 +31,32 @@ body{
     min-height:100vh;
     background:
         radial-gradient(
-            circle at 50% -20%,
-            #173b70 0%,
-            #0b254b 32%,
-            #06162f 65%,
-            #020a18 100%
+            circle at 50% -15%,
+            #214a83 0%,
+            #102f5b 25%,
+            #071b39 55%,
+            #020b1d 100%
         );
-    color:#ffffff;
+    color:#fff;
     font-family:'Inter',sans-serif;
-    padding:18px 12px 28px;
+    padding:18px 12px 30px;
 }
 
 
-/* =====================================================
-   PAGE
-===================================================== */
+/* ==============================
+   MAIN PAGE
+============================== */
 
 .page{
     width:100%;
     max-width:430px;
-    margin:auto;
+    margin:0 auto;
 }
 
 
-/* =====================================================
-   COMPANY HEADER
-===================================================== */
+/* ==============================
+   HEADER
+============================== */
 
-.company-header{
+.header{
     text-align:center;
-    margin-bottom:16px;
-}
-
-.brand-mark{
-    width:34px;
-    height:34px;
-    margin
