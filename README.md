@@ -4,243 +4,491 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Lyrics Vibes Team - Member Profile</title>
+  <title>Lyrics Vibes Team | Member Profile</title>
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
     }
 
     body {
       min-height: 100vh;
-      background: linear-gradient(145deg, #061a3a, #0b2d5c);
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 25px;
+      background:
+        radial-gradient(circle at top, #12366d 0%, #071a38 45%, #020b1d 100%);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      padding: 28px 14px;
     }
 
-    .profile-card {
+    .page {
       width: 100%;
-      max-width: 430px;
-      background: #09244a;
-      border: 1px solid #d4af37;
-      border-radius: 20px;
-      padding: 30px 22px;
+      max-width: 520px;
+      margin: auto;
+    }
+
+    /* TEAM NAME */
+
+    .header {
       text-align: center;
-      box-shadow: 0 10px 35px rgba(0,0,0,0.35);
+      margin-bottom: 22px;
+    }
+
+    .header-line {
+      width: 75px;
+      height: 2px;
+      background: #d9ad32;
+      margin: 0 auto 12px;
+      box-shadow: 0 0 10px #d9ad32;
     }
 
     .team-name {
-      color: #d4af37;
-      font-size: 25px;
-      font-weight: bold;
-      letter-spacing: 1px;
-      margin-bottom: 5px;
+      font-family: 'Cinzel', serif;
+      color: #e4b83f;
+      font-size: clamp(24px, 7vw, 34px);
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-align: center;
     }
 
     .subtitle {
-      color: #dcdcdc;
-      font-size: 13px;
-      margin-bottom: 28px;
+      margin-top: 7px;
+      color: #eadcae;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-align: center;
     }
+
+    /* MAIN CARD */
+
+    .card {
+      position: relative;
+      background: rgba(7, 27, 57, 0.94);
+      border: 1px solid #d9ad32;
+      border-radius: 24px;
+      padding: 28px 20px 24px;
+      box-shadow:
+        0 0 25px rgba(217, 173, 50, 0.08),
+        inset 0 0 35px rgba(0, 0, 0, 0.18);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 7px;
+      border: 1px solid rgba(217, 173, 50, 0.22);
+      border-radius: 19px;
+      pointer-events: none;
+    }
+
+    /* PROFILE ICON */
+
+    .profile-icon {
+      width: 92px;
+      height: 92px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      border: 2px solid #e4b83f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #061b3b;
+      box-shadow: 0 0 18px rgba(228, 184, 63, 0.25);
+      position: relative;
+    }
+
+    .profile-icon::before {
+      content: "♙";
+      font-size: 55px;
+      color: #e4b83f;
+      transform: rotate(180deg);
+    }
+
+    /* NAME */
 
     .member-name {
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 12px;
+      text-align: center;
+      font-family: 'Cinzel', serif;
+      font-size: clamp(21px, 6vw, 29px);
+      line-height: 1.25;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 14px;
     }
+
+    /* POSITION */
 
     .position {
-      display: inline-block;
-      color: #061a3a;
-      background: #d4af37;
-      padding: 7px 20px;
+      width: fit-content;
+      margin: auto;
+      background: linear-gradient(135deg, #e7bd4c, #c99820);
+      color: #071a38;
+      padding: 8px 28px;
       border-radius: 30px;
-      font-weight: bold;
-      margin-bottom: 15px;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 1px;
+      box-shadow: 0 5px 18px rgba(217, 173, 50, 0.15);
     }
+
+    /* DIVIDER */
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 22px auto;
+      max-width: 280px;
+    }
+
+    .divider span {
+      height: 1px;
+      flex: 1;
+      background: #d9ad32;
+      opacity: 0.7;
+    }
+
+    .diamond {
+      width: 9px;
+      height: 9px;
+      background: #d9ad32;
+      transform: rotate(45deg);
+    }
+
+    /* MEMBER ID */
 
     .member-id {
-      color: #d4af37;
-      font-size: 15px;
-      margin-bottom: 30px;
+      border: 1px solid rgba(217, 173, 50, 0.75);
+      border-radius: 12px;
+      padding: 12px;
+      text-align: center;
+      color: #e4b83f;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 24px;
     }
 
+    /* PRIVATE SECTION */
+
     .private-box {
-      border-top: 1px solid #d4af37;
-      padding-top: 22px;
+      border: 1px solid #d9ad32;
+      border-radius: 18px;
+      padding: 20px 16px;
+      background: rgba(2, 14, 34, 0.55);
+    }
+
+    .lock {
+      width: 48px;
+      height: 48px;
+      margin: -42px auto 12px;
+      background: #071a38;
+      border: 1px solid #d9ad32;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 23px;
     }
 
     .private-title {
-      color: #d4af37;
-      font-size: 18px;
-      margin-bottom: 15px;
+      text-align: center;
+      color: #e4b83f;
+      font-family: 'Cinzel', serif;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
     }
 
     input {
       width: 100%;
-      padding: 13px;
+      height: 48px;
       border-radius: 10px;
-      border: 1px solid #777;
+      border: 1px solid #c99e2d;
+      background: #061a38;
+      color: white;
+      padding: 0 14px;
       outline: none;
-      margin-bottom: 12px;
-      font-size: 15px;
+      font-size: 14px;
+    }
+
+    input::placeholder {
+      color: #9ca6b6;
+    }
+
+    input:focus {
+      border-color: #f0c94f;
+      box-shadow: 0 0 10px rgba(228, 184, 63, 0.18);
     }
 
     button {
       width: 100%;
-      padding: 13px;
+      height: 48px;
+      margin-top: 11px;
       border: none;
       border-radius: 10px;
-      background: #d4af37;
-      color: #061a3a;
-      font-size: 15px;
-      font-weight: bold;
+      background: linear-gradient(135deg, #edc34c, #c79620);
+      color: #071a38;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
       cursor: pointer;
     }
 
-    button:hover {
-      opacity: 0.9;
-    }
-
-    .private-info {
-      display: none;
-      text-align: left;
-      margin-top: 20px;
-      background: #061a3a;
-      border: 1px solid #d4af37;
-      border-radius: 12px;
-      padding: 18px;
-    }
-
-    .private-info p {
-      margin-bottom: 12px;
-      line-height: 1.5;
-    }
-
-    .private-info strong {
-      color: #d4af37;
+    button:active {
+      transform: scale(0.98);
     }
 
     .error {
-      color: #ff7777;
-      margin-top: 10px;
       display: none;
-      font-size: 14px;
+      color: #ff8585;
+      text-align: center;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+
+    /* PRIVATE DETAILS */
+
+    .private-info {
+      display: none;
+      margin-top: 17px;
+      border-top: 1px solid rgba(217, 173, 50, 0.4);
+      padding-top: 15px;
+    }
+
+    .info-item {
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+    }
+
+    .info-item strong {
+      display: block;
+      color: #e4b83f;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      margin-bottom: 2px;
+    }
+
+    .info-item span {
+      color: #e8edf5;
+    }
+
+    /* FOOTER */
+
+    .footer {
+      text-align: center;
+      margin-top: 18px;
+      color: #c9a83d;
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    /* SMALL PHONES */
+
+    @media (max-width: 360px) {
+
+      body {
+        padding: 20px 10px;
+      }
+
+      .card {
+        padding: 24px 15px 20px;
+      }
+
+      .profile-icon {
+        width: 78px;
+        height: 78px;
+      }
+
+      .profile-icon::before {
+        font-size: 45px;
+      }
+
+      .private-box {
+        padding: 18px 12px;
+      }
+
+      .team-name {
+        font-size: 22px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="profile-card">
+  <main class="page">
 
-    <div class="team-name">LYRICS VIBES TEAM</div>
+    <!-- HEADER -->
 
-    <div class="subtitle">
-      OFFICIAL MEMBER PROFILE
-    </div>
+    <header class="header">
 
-    <div class="member-name">
-      MUNAZZAFA SALISU UMAR
-    </div>
+      <div class="header-line"></div>
 
-    <div class="position">
-      ADMIN
-    </div>
+      <h1 class="team-name">
+        LYRICS VIBES TEAM
+      </h1>
 
-    <div class="member-id">
-      MEMBER ID: LVT004
-    </div>
+      <p class="subtitle">
+        OFFICIAL MEMBER PROFILE
+      </p>
 
-    <div class="private-box">
+    </header>
 
-      <div class="private-title">
-        🔐 Private Information
+
+    <!-- PROFILE CARD -->
+
+    <section class="card">
+
+      <!-- Profile icon -->
+      <div class="profile-icon"></div>
+
+
+      <!-- Public information -->
+
+      <h2 class="member-name">
+        MUNAZZAFA SALISU UMAR
+      </h2>
+
+      <div class="position">
+        ADMIN
       </div>
 
-      <input
-        type="password"
-        id="password"
-        placeholder="Enter password"
-      >
 
-      <button onclick="unlockInfo()">
-        VIEW PRIVATE INFORMATION
-      </button>
-
-      <div class="error" id="error">
-        Incorrect password.
+      <div class="divider">
+        <span></span>
+        <div class="diamond"></div>
+        <span></span>
       </div>
 
-      <div class="private-info" id="privateInfo">
 
-        <p>
-          <strong>Username:</strong>
-          M Sayyada Lyrics
-        </p>
+      <div class="member-id">
+        MEMBER ID: LVT004
+      </div>
 
-        <p>
-          <strong>Phone Number:</strong>
-          08102390873
-        </p>
 
-        <p>
-          <strong>Email:</strong>
-          msayyadalyrics@gmail.com
-        </p>
+      <!-- Private information -->
 
-        <p>
-          <strong>Age:</strong>
-          20
-        </p>
+      <div class="private-box">
 
-        <p>
-          <strong>Country:</strong>
-          Nigeria
-        </p>
+        <div class="lock">
+          🔒
+        </div>
 
-        <p>
-          <strong>Section:</strong>
-          All of them
-        </p>
+        <h3 class="private-title">
+          PRIVATE INFORMATION
+        </h3>
 
-        <p>
-          <strong>Competition Experience:</strong>
-          No
-        </p>
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter password"
+        >
 
-        <p>
-          <strong>Why she joined:</strong><br>
-          Because I love lyrics, and I really admire the
-          LYRICS VIBES TEAM. I also enjoy interacting and
-          connecting with its members.
-        </p>
+        <button onclick="unlockInfo()">
+          VIEW PRIVATE INFORMATION
+        </button>
 
-        <p>
-          <strong>About her:</strong><br>
-          I am from Kano, Nigeria. I enjoy interacting with
-          people like me, and I am a calm person who doesn't
-          like unnecessary drama or noise.
-        </p>
+        <div class="error" id="error">
+          Incorrect password. Please try again.
+        </div>
+
+
+        <!-- Hidden information -->
+
+        <div class="private-info" id="privateInfo">
+
+          <div class="info-item">
+            <strong>Username</strong>
+            <span>M Sayyada Lyrics</span>
+          </div>
+
+          <div class="info-item">
+            <strong>Phone Number</strong>
+            <span>08102390873</span>
+          </div>
+
+          <div class="info-item">
+            <strong>Email Address</strong>
+            <span>msayyadalyrics@gmail.com</span>
+          </div>
+
+          <div class="info-item">
+            <strong>Age</strong>
+            <span>20</span>
+          </div>
+
+          <div class="info-item">
+            <strong>Country</strong>
+            <span>Nigeria</span>
+          </div>
+
+          <div class="info-item">
+            <strong>Section</strong>
+            <span>All of them</span>
+          </div>
+
+          <div class="info-item">
+            <strong>Competition Experience</strong>
+            <span>No</span>
+          </div>
+
+          <div class="info-item">
+            <strong>Why She Joined</strong>
+            <span>
+              Because I love lyrics, and I really admire
+              the LYRICS VIBES TEAM. I also enjoy
+              interacting and connecting with its members.
+            </span>
+          </div>
+
+          <div class="info-item">
+            <strong>About Her</strong>
+            <span>
+              I am from Kano, Nigeria. I enjoy interacting
+              with people like me, and I am a calm person
+              who doesn't like unnecessary drama or noise.
+            </span>
+          </div>
+
+        </div>
 
       </div>
 
-    </div>
+    </section>
 
-  </div>
+
+    <footer class="footer">
+      LYRICS VIBES TEAM
+    </footer>
+
+  </main>
+
 
   <script>
+
     function unlockInfo() {
 
-      const password = document.getElementById("password").value;
-      const privateInfo = document.getElementById("privateInfo");
-      const error = document.getElementById("error");
+      const password =
+        document.getElementById("password").value;
+
+      const privateInfo =
+        document.getElementById("privateInfo");
+
+      const error =
+        document.getElementById("error");
+
 
       if (password === "Sayyada2003@") {
 
@@ -253,7 +501,9 @@
         error.style.display = "block";
 
       }
+
     }
+
   </script>
 
 </body>
