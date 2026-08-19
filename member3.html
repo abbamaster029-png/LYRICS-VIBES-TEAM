@@ -298,4 +298,269 @@ button{
     justify-content:center;
     background:#fff;
     border-radius:8px;
-    border:1px solid #d9ad
+    border:1px solid #d9ad32;
+}
+
+#qrcode img,
+#qrcode canvas{
+    width:104px!important;
+    height:104px!important;
+}
+
+.qr-note{
+    margin-top:7px;
+    color:#8c99aa;
+    font-size:6px;
+}
+
+.footer{
+    text-align:center;
+    margin-top:10px;
+    color:#718096;
+    font-size:6.5px;
+    letter-spacing:1.5px;
+}
+
+.footer strong{
+    color:#c39d34;
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+<header class="header">
+    <div class="logo">LV</div>
+    <h1 class="team-name">LYRICS VIBES TEAM</h1>
+    <p class="subtitle">OFFICIAL MEMBER PROFILE</p>
+    <div class="header-line"></div>
+</header>
+
+<section class="card">
+
+<div class="profile">
+
+    <div class="verified">
+        <span class="verified-dot"></span>
+        VERIFIED MEMBER
+    </div>
+
+    <h2 class="member-name">
+        SA'ADATU MUHAMMAD ADAMU
+    </h2>
+
+    <div class="position">
+        ASST. PRO
+    </div>
+
+</div>
+
+<div class="member-meta">
+
+    <div class="meta">
+        <span class="meta-label">Member ID</span>
+        <span class="meta-value">LVT007</span>
+    </div>
+
+    <div class="meta">
+        <span class="meta-label">Status</span>
+        <span class="meta-value">ACTIVE</span>
+    </div>
+
+</div>
+
+<div class="private">
+
+<div class="private-heading">
+
+    <div class="private-icon">🔒</div>
+
+    <h3 class="private-title">
+        PRIVATE INFORMATION
+    </h3>
+
+    <p class="private-subtitle">
+        Authorized access only
+    </p>
+
+</div>
+
+<div class="password-box">
+
+    <label class="password-label" for="password">
+        Member Password
+    </label>
+
+    <input
+        type="password"
+        id="password"
+        placeholder="Enter password"
+        autocomplete="off"
+    >
+
+    <button onclick="unlockInfo()">
+        VIEW PRIVATE INFORMATION
+    </button>
+
+    <div class="error" id="error">
+        Incorrect password. Please try again.
+    </div>
+
+</div>
+
+<div class="private-info" id="privateInfo">
+
+    <div class="info-item">
+        <strong>Username</strong>
+        <span>Boddielyrics</span>
+    </div>
+
+    <div class="info-item">
+        <strong>Phone Number</strong>
+        <span>09168537559</span>
+    </div>
+
+    <div class="info-item">
+        <strong>Email Address</strong>
+        <span>saadatumuhammad7559@gmail.com</span>
+    </div>
+
+    <div class="info-item">
+        <strong>Age</strong>
+        <span>23</span>
+    </div>
+
+    <div class="info-item">
+        <strong>Country</strong>
+        <span>Nigeria</span>
+    </div>
+
+    <div class="info-item">
+        <strong>Section</strong>
+        <span>All of the sections</span>
+    </div>
+
+    <div class="info-item">
+        <strong>Competition Experience</strong>
+        <span>No</span>
+    </div>
+
+    <div class="info-item">
+        <strong>Why She Joined</strong>
+        <span>
+            I love Lyrics and I choose Lyrics Vibes Team
+            to learn about lyrics.
+        </span>
+    </div>
+
+    <div class="info-item">
+        <strong>About Her</strong>
+        <span>
+            Very calm, simple person but I don't tolerate nonsense.
+        </span>
+    </div>
+
+</div>
+
+<div class="qr-section">
+
+    <h3 class="qr-title">
+        SCAN MEMBER PROFILE
+    </h3>
+
+    <p class="qr-subtitle">
+        Scan this QR code to open this profile
+    </p>
+
+    <div id="qrcode"></div>
+
+    <p class="qr-note">
+        LYRICS VIBES TEAM • LVT007 • OFFICIAL MEMBER
+    </p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer class="footer">
+    <strong>LYRICS VIBES TEAM</strong>
+    &nbsp; • &nbsp;
+    OFFICIAL MEMBER PROFILE
+</footer>
+
+</div>
+
+<script>
+
+function unlockInfo(){
+
+    const password =
+        document.getElementById("password").value;
+
+    const privateInfo =
+        document.getElementById("privateInfo");
+
+    const error =
+        document.getElementById("error");
+
+    if(password === "Saadatu2002@"){
+
+        privateInfo.style.display = "block";
+        error.style.display = "none";
+
+    }else{
+
+        privateInfo.style.display = "none";
+        error.style.display = "block";
+
+    }
+}
+
+document
+.getElementById("password")
+.addEventListener("keydown",function(event){
+
+    if(event.key === "Enter"){
+        unlockInfo();
+    }
+
+});
+
+window.addEventListener("load",function(){
+
+    const qrContainer =
+        document.getElementById("qrcode");
+
+    /*
+      Sa'adatu's file:
+      member7.html
+    */
+
+    const profileURL =
+"https://abbamaster029-png.github.io/LYRICS-VIBES-TEAM/member7.html";
+
+    new QRCode(qrContainer,{
+
+        text:profileURL,
+
+        width:104,
+        height:104,
+
+        colorDark:"#061832",
+        colorLight:"#ffffff",
+
+        correctLevel:
+            QRCode.CorrectLevel.H
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
